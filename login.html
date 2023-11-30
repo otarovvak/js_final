@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aa4e7733af.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sass/main.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="small-container">
+        <h1>Sign in</h1>
+        <div class="input-block">
+            <i class="fa-solid fa-user fa-xs icons" style="color: #cc3e89;"></i>
+            <input class="user-input" type="text" placeholder="Email or Username">
+            <span id="user-error" class="error-message"></span>
+        </div>
+        <div class="input-block">
+            <i class="fa-solid fa-lock fa-xs icons" style="color:#cc3e89;"></i>
+            <input class="password-input" type="password" placeholder="Password">
+            <span id="password-error" class="error-message"></span>
+        </div>
+
+        <button class="signin-btn log-btn button">Sign in</button>
+        <span class="question-sign">Don't have an account? <a href="register.html">Sign up</a></span>
+    </div>
+    <script>
+        const userInput = document.querySelector('.user-input')
+        const password = document.querySelector('.password-input')
+        const userError = document.querySelector('#user-error')
+        const passwordError = document.querySelector('#password-error')
+        const signInBtn = document.querySelector('.signin-btn')
+
+        signInBtn.addEventListener('click', () => {
+            const savedUsers = JSON.parse(localStorage.getItem('users')) || []
+            const foundUser = savedUsers.find(u => u.email === userInput.value) || savedUsers.find(u => u.username === userInput.value)
+            userError.textContent = !foundUser ? 'User not found' : ''
+
+            if (foundUser && foundUser.password === password.value) {
+                const loggedInUser = {
+                    username: foundUser.username,
+                    email: foundUser.email,
+                    password: foundUser.password
+                }
+
+                localStorage.setItem('logged-in', JSON.stringify(loggedInUser))
+
+                setTimeout(() => {
+                    window.location.href = 'index.html'
+                }, 1000)
+            } else {
+                passwordError.textContent = 'Incorrect password'
+            }
+        })
+    </script>
+    <script src="cart.js"></script>
+    <script src="movie.js"></script>
+</body>
+</html>

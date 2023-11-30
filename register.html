@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aa4e7733af.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sass/main.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="small-container">
+        <h1>Sign up</h1>
+        <div class="input-block">
+            <i class="fa-solid fa-user fa-xs icons" style="color: #cc3e89;"></i>
+            <input class="username-input" name="name" type="text" placeholder="Your Name">
+            <span class="error-message" id="username-error"></span>
+        </div>
+        <div class="input-block">
+            <i class="fa-solid fa-envelope fa-xs icons" style="color:  #cc3e89;"></i>
+            <input class="email-input" type="email" placeholder="Your Email">
+            <span class="error-message" id="email-error"></span>
+        </div>
+        <div class="input-block">
+            <i class="fa-solid fa-lock fa-xs icons" style="color:#cc3e89;"></i>
+            <input class="password-input" type="password" placeholder="Password">
+            <span class="error-message" id="password-error"></span>
+        </div>
+        <div class="input-block">
+            <i class="fa-solid fa-lock fa-xs icons" style="color:#cc3e89;"></i>
+            <input class="password-check-input" type="password" placeholder="Repeat your password">
+            <span class="error-message" id="password-check-error"></span>
+        </div>
+       
+        <button class="signup-btn button">Register</button>
+        <p class="question-sign">Already have an account? <a href="login.html">Sign in</a></p>
+    </div>
+
+    <script>
+    const signupBtn = document.querySelector('.signup-btn')
+    signupBtn.addEventListener('click', () => {
+        handleSignUp()
+    })
+
+    function handleSignUp() {
+        const username = document.querySelector('.username-input')
+        const email = document.querySelector('.email-input')
+        const password = document.querySelector('.password-input')
+        const passwordCheck = document.querySelector('.password-check-input')
+        const usernameError = document.querySelector('#username-error')
+        const emailError = document.querySelector('#email-error')
+        const passwordError = document.querySelector('#password-error')
+        const passwordCheckError = document.querySelector('#password-check-error')
+
+        usernameError.textContent = (username.value.trim() === '') ? "Username can't be empty" : '';
+        emailError.textContent = (!isValidEmail(email.value)) ? "Enter a valid email address" : '';
+        passwordError.textContent = (password.value.trim().length < 8) ? "Password should contain at least 8 characters" : '';
+        passwordCheckError.textContent = (password.value !== passwordCheck.value) ? "Passwords do not match" : '';
+
+        if (!usernameError.textContent && !emailError.textContent && !passwordError.textContent && !passwordCheckError.textContent) {
+            const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+            if (savedUsers.some(u => u.username === username.value)) {
+                usernameError.textContent = "Username is already taken";
+            }
+
+            if (savedUsers.some(u => u.email === email.value)) {
+                emailError.textContent = "Email is already taken";
+            }
+
+            if (!usernameError.textContent && !emailError.textContent) {
+                const user = {
+                    username: username.value,
+                    email: email.value,
+                    password: password.value
+                };
+
+                savedUsers.push(user);
+                localStorage.setItem("users", JSON.stringify(savedUsers));
+
+                alert('Succesful registration')
+
+                setTimeout(() => {
+                    window.location.href = 'login.html'
+                }, 1000)
+            }
+        }
+    }
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return emailRegex.test(email)
+    }
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.header, .eachMovie {
+  width: 100%;
+  margin: auto;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  display: inline;
+  color: black;
+  font-family: Montserrat;
+}
+
+li a {
+  color: black;
+  font-family: Montserrat;
+}
+
+p, h1, h2, h3 {
+  font-family: Montserrat;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: flex-end;
+}
+
+.header-links {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.header-login {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+* {
+  font-family: "Montserrat";
+}/*# sourceMappingURL=base.css.map */

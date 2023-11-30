@@ -1,0 +1,32 @@
+ul li {
+  display: inline;
+  color: white;
+}
+
+li a {
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header-links {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 150px;
+}
+
+.header-login {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.movieBlock {
+  width: 400px;
+}
+/*# sourceMappingURL=header.css.map */

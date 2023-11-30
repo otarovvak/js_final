@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sass/main.css">
+    <script src="https://kit.fontawesome.com/aa4e7733af.js" crossorigin="anonymous"></script>
+    <title>Movies</title>
+    <link rel="icon" type="image/x-icon" href="img/logo_svg_main.svg">
+</head>
+<body>
+    <section class="explore">
+        <div class="container">
+            <div class="navbar">
+                  <div class="logo">
+                <img src="img/logo_svg_main.svg" alt="">
+                <img src="img/logo_text.svg" alt="">
+            </div>
+            <ul class="header-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+            </ul>
+            <ul class="header-login">
+                <li><a href="cart.html" class="cart">Cart</a></li>
+                <li><a href="login.html" class="Login Cart">Log in</a></li>
+            </ul>
+            </div>
+            <div class="top-rated-content">
+                    <h5>Explore movies and TV shows</h5>
+                    <div class="input-container">
+                        <input type="search" placeholder="search by title" id="searchInput"> 
+                        <div class="icon-right">
+                            <button href="" class="search-button"><img src="img/search.svg" alt=""></button>
+                        </div>
+                </div>
+
+            </div>
+            <div class="explore-content">
+                <div class="explore-filter">
+                    <div class="filter-block">
+                        <div class="filter-acd">
+                            <button class="btn-acd">Filters<i class="fa-solid fa-chevron-down" style="color: #f86eb6;"></i></button>
+                            <ul class="filter">
+                                <hr>
+                                <li><p>Sort results by</p></li>
+                                <select id="select-filter">
+                                    <option value="popularity">By Popularity</option>
+                                    <option value="release-descending">Release Date Descending</option>
+                                    <option value="release-ascending">Release Date Ascending</option>
+                                    <option value="rating-descending">Rating Descending</option>
+                                    <option value="rating-ascending">Rating Ascending</option>
+                                    <option value="title-AZ">Title(A-Z)</option>
+                                    <option value="title-ZA">Title(Z-A)</option>
+                                </select>
+                                <hr>
+                                <div class="genres-block">
+                                    <p>Genres</p>
+                                    <ul class="genre-filter">
+                                        <h4 class="showAll">Show All</h4>
+                                        <li data-value="10759">Action & Adventure</li>
+                                        <li data-value="28">Action</li>
+                                        <li data-value="18">Drama</li>
+                                        <li data-value="878">Science fiction</li>
+                                        <li data-value="27">Horror</li>
+                                        <li data-value="80">Crime</li>
+                                        <li data-value="16">Animation</li>
+                                        <li data-value="35">Comedy</li>
+                                        <li data-value="9648">Mystery</li>
+                                        <li data-value="53">Thriller</li>
+                                        <li data-value="10764">Reality</li>
+                                    </ul>  
+                                </div>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-blocks">
+
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+        <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+        
+        <div class="row">
+        <ul>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        </ul>
+        </div>
+        
+        </div>
+        </footer>
+    <script src="movie.js"></script>
+    <script src="cart.js"></script>
+    <script src="https://kit.fontawesome.com/aa4e7733af.js" crossorigin="anonymous"></script>
+</body>
+</html>
+<p></p>
